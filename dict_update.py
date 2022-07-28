@@ -28,8 +28,8 @@ with st.expander('Click here to view the instructions for updating base dictiona
     2. Download the responses as **CSV** file.
     3. Upload the CSV file to this page and download the updated dictionary (a JSON file)
     4. Visit the [Github](https://github.com/Rocheeeeee/LIS_translation_tool.git) for the LIS translation tool.
-    5. Go to the *data* file and rename the old base dictionary **LIS DB.json** to **LIS DB_replaced at [today's date].json**
-    6. Upload the new dictionary to the *data* file and rename it to **LIS DB.json**
+    5. Go to the *data* file and rename the old base dictionary **base_dict.json** to **base_dict_replaced at [today's date].json**
+    6. Upload the new dictionary to the *data* file and rename it to **base_dict.json**
     """)
 
 st.header('Upload new tests that need to be added to the base dictionary')
@@ -50,7 +50,7 @@ if uploaded_file is not None:
                                 "Corresponding Roche assay names": 'AssayName'}, inplace = True)
 
         # Load the base dictionary      
-        base_dict = load_json('data/LIS DB.json')
+        base_dict = load_json('data/base_dict.json')
 
         # create a new dicitonary for the new tests
         new_dict = {}
@@ -58,7 +58,10 @@ if uploaded_file is not None:
             test = new_tests.iloc[i]
             LISName = test['LISName']
             Material = test['Material']
-            Assay = test['AssayName']
+            Assay = test['AssayName'] # string
+
+            # Turn the string of assays into a list of assays
+            Assay = Assay.split(',')
 
             new_dict[LISName] = {'Include': 1, 'Material': Material, 'AssayName': Assay}
 
@@ -75,7 +78,7 @@ if uploaded_file is not None:
 
         # download the updated base dictionary
         today = datetime.today().strftime("%Y%m%d")
-        new_file_name = 'LIS DB_update at ' + today +'.json'
+        new_file_name = 'base_dict_update at ' + today +'.json'
         json_dict = json.dumps(base_dict)
 
         st.download_button(
