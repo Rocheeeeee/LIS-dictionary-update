@@ -24,6 +24,7 @@ st.write('This page is for associate consultants to update the base dictionary.'
 with st.expander('Click here to view the instructions for updating base dictionary'):
     st.markdown("""
     #### Instructions
+    ** Note: Please do not change the column names of the response sheet for the update request form.**
     1. Visit the responses for the [update form](https://docs.google.com/spreadsheets/d/1yewrCftjO5iJzg5ib7wTrII80ayT4zHxek_D9D4KIEw/edit?usp=sharing)
     2. Download the responses as **CSV** file.
     3. Upload the CSV file to this page and download the updated dictionary (a JSON file)
