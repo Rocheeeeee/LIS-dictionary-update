@@ -28,10 +28,9 @@ with st.expander('Click here to view the instructions for updating base dictiona
     1. Visit the responses for the [update form](https://docs.google.com/spreadsheets/d/1yewrCftjO5iJzg5ib7wTrII80ayT4zHxek_D9D4KIEw/edit?usp=sharing)
     2. Download the responses as **CSV** file.
     3. Upload the CSV file to this page and download the updated dictionary (a JSON file)
-    4. Visit the [Github](https://github.com/Rocheeeeee/LIS_translation_tool.git) for the LIS translation tool.
-    5. Go to the *data* file and rename the old base dictionary **base_dict.json** to **base_dict_replaced at [today's date].json**
-    6. Upload the new dictionary to the *data* file and rename it to **base_dict.json**
-    7. Go to the
+    4. Visit the [Github for translation tool](https://github.com/Rocheeeeee/LIS_translation_tool.git) for the LIS translation tool.
+    5. Go to the *data* file upload the new dictionary.
+    7. Visit the [Github for dictionary update](https://github.com/Rocheeeeee/LIS-dictionary-update) and upload the new **base_dict.json**
     """)
 
 st.header('Upload new tests that need to be added to the base dictionary')
