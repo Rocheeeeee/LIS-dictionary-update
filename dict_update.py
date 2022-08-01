@@ -51,7 +51,7 @@ if uploaded_file is not None:
                                 "Corresponding Roche assay names": 'AssayName'}, inplace = True)
 
         # Load the base dictionary      
-        base_dict = load_json('data/base_dict.json')
+        base_dict = load_json('base_dict.json')
 
         # create a new dicitonary for the new tests
         new_dict = {}
