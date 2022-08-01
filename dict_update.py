@@ -31,6 +31,7 @@ with st.expander('Click here to view the instructions for updating base dictiona
     4. Visit the [Github](https://github.com/Rocheeeeee/LIS_translation_tool.git) for the LIS translation tool.
     5. Go to the *data* file and rename the old base dictionary **base_dict.json** to **base_dict_replaced at [today's date].json**
     6. Upload the new dictionary to the *data* file and rename it to **base_dict.json**
+    7. Go to the
     """)
 
 st.header('Upload new tests that need to be added to the base dictionary')
@@ -78,13 +79,13 @@ if uploaded_file is not None:
 
 
         # download the updated base dictionary
-        today = datetime.today().strftime("%Y%m%d")
-        new_file_name = 'base_dict_update at ' + today +'.json'
+        # today = datetime.today().strftime("%Y%m%d")
+        # new_file_name = 'base_dict_update at ' + today +'.json'
         json_dict = json.dumps(base_dict)
 
         st.download_button(
             label = '📥 Download the updated base dictionary (JSON file)',
-            file_name = new_file_name,
+            file_name = 'base_dict.json',
             data = json_dict
         )
     except KeyError:
