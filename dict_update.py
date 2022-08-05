@@ -10,7 +10,7 @@ st.set_page_config(page_title="Base Dictionary Update", page_icon='random',
 
 
 # load the json file
-@st.cache(allow_output_mutation=True)
+@st.cache()
 def load_json(file_name):
     with open(file_name, 'r') as f:
         data = json.load(f)
@@ -52,7 +52,7 @@ if uploaded_file is not None:
 
         # Load the base dictionary      
         base_dict = load_json('base_dict.json')
-
+        new_base_dict = base_dict.copy()
         # create a new dicitonary for the new tests
         new_dict = {}
         for i in range(len(new_tests)):
@@ -67,20 +67,13 @@ if uploaded_file is not None:
             new_dict[LISName] = {'Include': 1, 'Material': Material, 'AssayName': Assay}
 
         # update the new tests to base dictionary
-        for key, value in new_dict.items():
-            # if the new test is already in the base dicitonary, update the old one
-            if key in base_dict.keys():
-                base_dict[key] = value
-            
-            # the test is not in the dictionary, add the test to base
-            else:
-                base_dict[key] = value
+         new_base_dict = new_base_dict.update(new_dict)
 
 
         # download the updated base dictionary
         # today = datetime.today().strftime("%Y%m%d")
         # new_file_name = 'base_dict_update at ' + today +'.json'
-        json_dict = json.dumps(base_dict)
+        json_dict = json.dumps(new_base_dict)
 
         st.download_button(
             label = '📥 Download the updated base dictionary (JSON file)',
