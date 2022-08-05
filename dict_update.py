@@ -10,7 +10,6 @@ st.set_page_config(page_title="Base Dictionary Update", page_icon='random',
 
 
 # load the json file
-@st.cache()
 def load_json(file_name):
     with open(file_name, 'r') as f:
         data = json.load(f)
