@@ -64,7 +64,7 @@ if uploaded_file is not None:
             # Turn the string of assays into a list of assays
             Assay = Assay.split(',')
 
-            new_dict[LISName] = {'Include': 1, 'Material': Material, 'AssayName': Assay}
+            new_dict[LISName] = {'Include': 1, 'Material': Material, 'Assay Name': Assay}
 
         # update the new tests to base dictionary
         for key, value in new_dict.items():
