@@ -66,7 +66,8 @@ if uploaded_file is not None:
 
         # update the new tests to base dictionary
         new_base_dict = new_base_dict.update(new_dict)
-
+        st.write(new_base_dict)
+        st.write(new_dict)
 
         # download the updated base dictionary
         # today = datetime.today().strftime("%Y%m%d")
