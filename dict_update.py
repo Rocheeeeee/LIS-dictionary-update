@@ -65,7 +65,7 @@ if uploaded_file is not None:
             new_dict[LISName] = {'Include': 1, 'Material': Material, 'AssayName': Assay}
 
         # update the new tests to base dictionary
-        new_base_dict = new_base_dict.update(new_dict)
+        new_base_dict = base_dict.update(new_dict)
         st.write(new_base_dict)
         st.write(new_dict)
 
