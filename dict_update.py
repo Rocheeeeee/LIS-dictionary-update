@@ -10,6 +10,7 @@ st.set_page_config(page_title="Base Dictionary Update", page_icon='random',
 
 
 # load the json file
+@st.cache(allow_output_mutation = True)
 def load_json(file_name):
     with open(file_name, 'r') as f:
         data = json.load(f)
@@ -66,6 +67,7 @@ if uploaded_file is not None:
 
         # update the new tests to base dictionary
         new_base_dict = base_dict.update(new_dict)
+        st.write(base_dict)
         st.write(new_base_dict)
         st.write(new_dict)
 
