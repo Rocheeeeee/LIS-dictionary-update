@@ -56,7 +56,8 @@ if uploaded_file is not None:
         new_dict = {}
         for i in range(len(new_tests)):
             test = new_tests.iloc[i]
-            LISName = test['LISName']
+            # turn the LIS test name into all upper case
+            LISName = test['LISName'].upper()
             Material = test['Material']
             Assay = test['AssayName'] # string
 
